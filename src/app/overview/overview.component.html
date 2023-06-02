@@ -1,0 +1,86 @@
+<div style="text-align: center" >
+    <!-- img id="server-img" src="assets/server.svg" -->
+    <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-gray-800">Host information</h1>
+</div>
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg" style="margin-bottom: 100px">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Key
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Value
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Uptime
+                </th>
+                <td class="px-6 py-4">
+                    {{host_info?.uptime}}
+                </td>
+            </tr>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Running on
+                </th>
+                <td class="px-6 py-4">
+                    {{host_info?.model_name}}
+                </td>
+            </tr>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Host CPU
+                </th>
+                <td class="px-6 py-4">
+                    {{host_info?.cpu_name}}
+                </td>
+            </tr>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Available Storage space
+                </th>
+                <td class="px-6 py-4">
+                    {{host_info?.disk_info}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div style="text-align: center" >
+    <!-- img id="server-img" src="assets/server.svg" -->
+    <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-gray-800">About Velocity</h1>
+</div>
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Key
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Value
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr class="bg-white dark:bg-gray-800">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Magic Mouse 2
+                </th>
+                <td class="px-6 py-4">
+                    Black
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
