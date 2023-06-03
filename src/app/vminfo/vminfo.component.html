@@ -1,0 +1,111 @@
+<!-- img id="server-img" src="assets/server.svg" -->
+<h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-gray-800">Virtual Machine: {{VM?.name}}</h1>
+
+<div id="container">
+    <div>
+        <div style="display: inline-block; padding-right: 20px; padding-bottom: 20px; width: 30%; vertical-align: top;">
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <img style="padding-left: 10px; padding-right: 10px; padding-top: 10px; border-radius: 4%" class="rounded-t-lg" [src]="snapshotURL" alt="" />
+                <div class="p-5">
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold text-gray-900 dark:text-white">
+                            <div class="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div>
+                        </span>
+                        <button href="#" type="button" class="text-white bg-blue-400 dark:bg-blue-500 cursor-not-allowed font-medium rounded-lg text-sm px-5 py-2.5 text-center" disabled>Connect using VNC</button>
+                    </div>
+                </div>
+            </div>
+            <div style="padding-top: 10px">
+                <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white" style="padding-bottom: 10px">Power Control:</h5>
+                    <button (click)="startVM()" style="width: 100%" type="button" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Start VM</button>                
+                    <button (click)="stopVM()" style="width: 100%" type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Stop VM</button>
+                    <button style="width: 100%" type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Remove VM</button>                
+                </div>
+            </div>
+        </div>
+        <div style="display: inline-block;">
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                KEY
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                VALUE
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                Name
+                            </th>
+                            <td class="px-6 py-4">
+                                {{VM?.name}}
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                CPU Count
+                            </th>
+                            <td class="px-6 py-4">
+                                {{VM?.cpu_count}}
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                Memory Size
+                            </th>
+                            <td class="px-6 py-4">
+                                {{VM?.memory_size}} MB
+                            </td>
+                        </tr>
+                        <tr class="border-b bg-gray-50 dark:bg-gray-900 dark:border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                Rosetta enabled
+                            </th>
+                            <td class="px-6 py-4">
+                                {{VM?.rosetta ? "Yes" : "No"}}
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                ISO Image
+                            </th>
+                            <td class="px-6 py-4">
+                                {{VM?.iso_image_path}}
+                            </td>
+                        </tr>
+
+                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                Virtual Screen Size
+                            </th>
+                            <td class="px-6 py-4">
+                                {{VM!.screen_size[0]}} x {{VM!.screen_size[1]}}
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                Machine Type
+                            </th>
+                            <td class="px-6 py-4">
+                                {{VM?.machine_type}}
+                            </td>
+                        </tr>
+
+                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700" *ngFor="let disk of VM?.disks">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                Attached Storage Device
+                            </th>
+                            <td class="px-6 py-4">
+                                {{disk.name}}: {{disk.size_mb}} MB
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+</div>

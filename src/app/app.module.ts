@@ -7,13 +7,15 @@ import { OverviewComponent } from './overview/overview.component';
 import { VMListComponent } from './vmlist/vmlist.component';
 import { InstallMediaComponent } from './install-media/install-media.component';
 import { HttpClientModule } from '@angular/common/http';
+import { VMInfoComponent } from './vminfo/vminfo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OverviewComponent,
     VMListComponent,
-    InstallMediaComponent
+    InstallMediaComponent,
+    VMInfoComponent
   ],
   imports: [
     BrowserModule,
